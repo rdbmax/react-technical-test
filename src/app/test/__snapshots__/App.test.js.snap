@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <div>
+    <h1>
+      This is a public message message.
+    </h1>
+  </div>
+  <div>
+    <h1>
+      This is a private message you can access
+    </h1>
+  </div>
+  <div>
+    <h1>
+      This is a private message you can't access
+    </h1>
+  </div>
+</div>
+`;
