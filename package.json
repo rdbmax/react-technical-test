@@ -1,0 +1,11 @@
+{
+  "name": "leboncoin-test",
+  "version": "1.0.0",
+  "description": "Messages list",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabriel Ratyé",
+  "license": "ISC"
+}
