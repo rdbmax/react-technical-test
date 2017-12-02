@@ -18,7 +18,14 @@ export default class Display extends React.Component {
     }
 
     render() {
-        const messages = this.state.msgs.map((msg, index) => <Message key={index} msg={this.state.msgs[index]}/>);
+        const messages = this.state.msgs.map((msg, index) => {
+
+            let isPrivate = ("messageKey" in msg)
+            
+            if (msg.messageKey === this.userId || !isPrivate) {
+                return <Message key={index} msg={msg} isPrivate={isPrivate} />
+            }
+    });
 
         return (<div>{messages}</div>);
     }

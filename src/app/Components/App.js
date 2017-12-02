@@ -28,12 +28,12 @@ export default class App extends React.Component {
         return (
         <div>
             <Display msgs={this.state.msgs} userId={this.userId} />
-            <Input addingMsg={this.addMsg.bind(this)} />
+            <Input addingMsg={this.addMsg.bind(this)} userId={this.userId} />
         </div>)
     }
 }
 
 App.propTypes = {
-    userId: PropTypes.string,
+    userId: PropTypes.number,
     initialMsgs: PropTypes.array
 }

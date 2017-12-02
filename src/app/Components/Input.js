@@ -5,6 +5,7 @@ export default class App extends React.Component {
 
     constructor(props) {
         super();
+        this.userId = props.userId;
         this.state = {
             inputContent: ''
         }
@@ -19,7 +20,14 @@ export default class App extends React.Component {
     sendPublicMsg() {
         let newMsg = {
             message: this.state.inputContent,
-            isPrivate: false
+        }
+        this.props.addingMsg(newMsg);
+    }
+
+    sendPrivateMsg() {
+        let newMsg = {
+            message: this.state.inputContent,
+            messageKey: this.userId
         }
         this.props.addingMsg(newMsg);
     }
@@ -28,7 +36,8 @@ export default class App extends React.Component {
         return(
             <div>
                 <input type="text" onChange={(e) => this.updateInput(e)} />
-                <button onClick={this.sendPublicMsg.bind(this)}>test</button>
+                <button onClick={this.sendPublicMsg.bind(this)}>Public</button>
+                <button onClick={this.sendPrivateMsg.bind(this)}>Private</button>
             </div>
         )
     }
