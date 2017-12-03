@@ -13,6 +13,10 @@ export default class Display extends React.Component {
         }
     }
 
+    /**
+     * When <Display /> receives new props from his parent <App />, updates this.state.msgs
+     * @param {*object} nextProps 
+     */
     componentWillReceiveProps(nextProps) {
         this.setState({msgs: nextProps.msgs});
     }
@@ -20,6 +24,9 @@ export default class Display extends React.Component {
     render() {
         const messages = this.state.msgs.map((msg, index) => {
 
+            /**
+             * If msg has a key, then it is a private message
+             */
             let isPrivate = ("messageKey" in msg)
             
             if (msg.messageKey === this.userId || !isPrivate) {
@@ -29,4 +36,9 @@ export default class Display extends React.Component {
 
         return (<div>{messages}</div>);
     }
+}
+
+Display.propTypes = {
+    userId: PropTypes.number,
+    msgs: PropTypes.array
 }

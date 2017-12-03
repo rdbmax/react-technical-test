@@ -10,6 +10,9 @@ export default class Message extends React.Component {
     }
 
     render() {
+        /**
+         * Defines the Private/Public field value.
+         */
         const messageScopeInfo = this.isPrivate ? 'Ceci est un message privé' : 'Ceci est un message public'; 
 
         return (

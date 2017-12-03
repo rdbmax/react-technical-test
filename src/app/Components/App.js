@@ -14,6 +14,11 @@ export default class App extends React.Component {
 
     }
 
+    /**
+     * Adds new message object to msgs array
+     * new messages are added from the component <Input />
+     * @param {*object} newMsg 
+     */
     addMsg(newMsg) {
 
         let currentMsgs = this.state.msgs;

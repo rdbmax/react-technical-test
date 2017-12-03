@@ -2,7 +2,8 @@ import React from 'react';
 import { render } from "react-dom";
 import App from "./Components/App.js"
 
-//Here we could call an App that would return a JSON Object with all the messages.
+//Here we could call an API that would return a JSON Object with all the messages.
+// Private messages have an ID that must match userId in order to be displayed
 const fakeMessages = [
     {
         message: "This is a public message message.",
