@@ -1,0 +1,120 @@
+body {
+    width: 100%;
+    background-color: #fafafa;
+    font-family: Helvetica, Arial, sans-serif;
+    margin: 0;
+}
+
+#main > * {
+    padding: 10px 20px;
+}
+
+#main h1 {
+    background-color: #f56b2a;
+    color: white;
+    margin: 0;
+}
+
+#add-message-tool {
+    background-color: #e6e6e6;
+}
+
+#add-message-tool input {
+    height: 40px;
+    line-height:40px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 96%;
+    padding: 0 2%;
+    margin: 10px 0 20px 0;
+}
+
+#add-message-tool input:focus {
+    outline: none;
+}
+
+#add-message-tool input.user-error {
+    border: 2px solid #ff9999;
+    background-color: #fbf4f4;
+}
+
+#add-message-tool button {
+    line-height: 36px;
+    text-transform: uppercase;
+    font-size: 14px;
+    display: inline-block;
+    background: #fff;
+    border: none;
+    -webkit-box-shadow: inset #4183d7 0 0 0 3px;
+    -moz-box-shadow: inset #4183d7 0 0 0 3px;
+    box-shadow: inset #4183d7 0 0 0 3px;
+    color: #4183d7;
+    text-align: center;
+    border-radius: 4px;
+    -webkit-transition: all 0.3 ease-in-out;
+    -moz-transition: all 0.3 ease-in-out;
+    transition: all 0.5 ease-in-out;
+    cursor: pointer;
+    min-width: 30%;
+}
+
+#add-message-tool button:first-of-type {
+    margin-right: 20px;
+    background: #4183d7;
+    color: #fff;
+}
+
+#add-message-tool button:hover {
+    -webkit-box-shadow: inset #4c94ef 0 0 0 3px;
+    -moz-box-shadow: inset #4c94ef 0 0 0 3px;
+    box-shadow: inset #4c94ef 0 0 0 3px;
+    color: #4c94ef;
+}
+
+#add-message-tool button:first-of-type:hover {
+    margin-right: 20px;
+    background: #4c94ef;
+    color: #fff;
+}
+
+.message {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    position: relative;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.message h2 {
+    color: #555;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.message span {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 10px;
+    color: #555;
+}
+
+.message i {
+    margin-left: 5px;
+}
+
+.message.private {
+    border-style: dashed;
+    background: #ffefe6;
+}
+
+@media (max-width: 500px) {
+    #add-message-tool button {
+        display: block;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+}
+

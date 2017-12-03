@@ -31,9 +31,10 @@ export default class App extends React.Component {
 
     render() {
         return (
-        <div>
-            <Display msgs={this.state.msgs} userId={this.userId} />
+        <div id="main">
+            <h1>Liste des messages</h1>
             <Input addingMsg={this.addMsg.bind(this)} userId={this.userId} />
+            <Display msgs={this.state.msgs} userId={this.userId} />
         </div>)
     }
 }

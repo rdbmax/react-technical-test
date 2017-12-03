@@ -34,7 +34,7 @@ export default class Display extends React.Component {
             }
     });
 
-        return (<div>{messages}</div>);
+        return (<div id="message-container">{messages}</div>);
     }
 }
 
