@@ -27,7 +27,12 @@ body {
     border-radius: 4px;
     width: 96%;
     padding: 0 2%;
-    margin: 10px 0 20px 0;
+    margin: 10px 0 2px 0;
+}
+
+#default-status {
+    font-size: 10px;
+    margin-bottom: 20px;
 }
 
 #add-message-tool input:focus {

@@ -62,6 +62,16 @@ export default class App extends React.Component {
     }
 
     /**
+     * Submit public message when you press "enter"
+     * @param {*object} e 
+     */
+    handleKeyPress(e) {
+        if (e.which !== 13) return;
+
+        this.sendMsg(this.createPublicMsg());
+    }
+
+    /**
      * Reset input value and state to avoid resending the same message
      */
     cleanMsgInput() {
@@ -75,7 +85,13 @@ export default class App extends React.Component {
     render() {
         return(
             <div id="add-message-tool">
-                <input placeholder="Insérez votre message et choisissez un status" type="text" ref="addMsgInput" onChange={(e) => this.updateInput(e)} />
+                <input 
+                    placeholder="Insérez votre message et choisissez un status" 
+                    type="text" ref="addMsgInput" 
+                    onChange={(e) => this.updateInput(e)} 
+                    onKeyPress={this.handleKeyPress.bind(this)}
+                />
+                <div id="default-status">*Le status par défault est publique</div>
                 <button onClick={() => {this.sendMsg(this.createPublicMsg())} }>envoyer message publique</button>
                 <button onClick={() => {this.sendMsg(this.createPrivateMsg())} }>envoyer message privé</button>
             </div>
