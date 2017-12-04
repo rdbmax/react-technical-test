@@ -24,18 +24,17 @@ export default class App extends React.Component {
         let currentMsgs = this.state.msgs;
         let newMsgs = currentMsgs.concat(newMsg);
 
-
         this.setState({msgs: newMsgs});
-
     }
-
+    
     render() {
         return (
-        <div id="main">
-            <h1>Liste des messages</h1>
-            <Input addingMsg={this.addMsg.bind(this)} userId={this.userId} />
-            <Display msgs={this.state.msgs} userId={this.userId} />
-        </div>)
+            <div id="main">
+                <h1>Liste des messages</h1>
+                <Input addingMsg={this.addMsg.bind(this)} userId={this.userId} />
+                <Display msgs={this.state.msgs} userId={this.userId} />
+            </div>
+        )
     }
 }
 

@@ -93,9 +93,6 @@ body {
 
 .message h2 {
     color: #555;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
 }
 
 .message span {

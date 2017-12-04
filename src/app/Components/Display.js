@@ -29,6 +29,10 @@ export default class Display extends React.Component {
              */
             let isPrivate = ("messageKey" in msg)
             
+            /**
+             * If the message is private with a messageKey different from userId, 
+             * then the message should not be displayed
+             */
             if (msg.messageKey === this.userId || !isPrivate) {
                 return <Message key={index} msg={msg} isPrivate={isPrivate} />
             }

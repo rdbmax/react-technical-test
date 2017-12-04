@@ -8,7 +8,8 @@ export default class App extends React.Component {
         this.userId = props.userId;
         this.addingMsg = props.addingMsg;
         this.state = {
-            inputContent: ''
+            inputContent: '',
+            inputError: false
         }
     }
 
@@ -53,9 +54,9 @@ export default class App extends React.Component {
 
         if(!/^ *$/.test(this.state.inputContent)) {
             this.addingMsg(newMsg);
-            addMsgInput.classList.remove('user-error');
+            this.setState({inputError: false})
         } else {
-            addMsgInput.className = "user-error";
+            this.setState({inputError: true})
         }
 
         this.cleanMsgInput();
@@ -86,12 +87,13 @@ export default class App extends React.Component {
         return(
             <div id="add-message-tool">
                 <input 
+                    className={this.state.inputError ? 'user-error' : ''}
                     placeholder="Insérez votre message et choisissez un status" 
                     type="text" ref="addMsgInput" 
                     onChange={(e) => this.updateInput(e)} 
                     onKeyPress={this.handleKeyPress.bind(this)}
                 />
-                <div id="default-status">*Le status par défault est publique</div>
+                <div id="default-status">*Le status par défaut est publique</div>
                 <button onClick={() => {this.sendMsg(this.createPublicMsg())} }>envoyer message publique</button>
                 <button onClick={() => {this.sendMsg(this.createPrivateMsg())} }>envoyer message privé</button>
             </div>

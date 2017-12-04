@@ -1,21 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<div>
-  <div>
-    <h1>
-      This is a public message message.
-    </h1>
+<div
+  id="main"
+>
+  <h1>
+    Liste des messages
+  </h1>
+  <div
+    id="add-message-tool"
+  >
+    <input
+      className=""
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      placeholder="Insérez votre message et choisissez un status"
+      type="text"
+    />
+    <div
+      id="default-status"
+    >
+      *Le status par défaut est publique
+    </div>
+    <button
+      onClick={[Function]}
+    >
+      envoyer message publique
+    </button>
+    <button
+      onClick={[Function]}
+    >
+      envoyer message privé
+    </button>
   </div>
-  <div>
-    <h1>
-      This is a private message you can access
-    </h1>
-  </div>
-  <div>
-    <h1>
-      This is a private message you can't access
-    </h1>
+  <div
+    id="message-container"
+  >
+    <div
+      className="message public"
+    >
+      <h2>
+        This is a public message message.
+      </h2>
+      <span>
+        message publique
+         
+        <i
+          className="fa fa-eye"
+        />
+      </span>
+    </div>
+    <div
+      className="message private"
+    >
+      <h2>
+        This is a private message you can access
+      </h2>
+      <span>
+        message privé
+         
+        <i
+          className="fa fa-lock"
+        />
+      </span>
+    </div>
   </div>
 </div>
 `;
