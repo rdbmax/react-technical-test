@@ -4,41 +4,39 @@ import Display from './Display';
 import Input from './Input'
 
 export default class App extends React.Component {
+    static propTypes = {
+        userId: PropTypes.number,
+        initialMsgs: PropTypes.array
+    }
 
     constructor(props) {
-        super();
-        this.userId = props.userId;
-        this.state = {
-            msgs: props.initialMsgs
-        }
+      super(props);
 
+      this.state = {
+        msgs: props.initialMsgs,
+      }
     }
 
     /**
      * Adds new message object to msgs array
      * new messages are added from the component <Input />
-     * @param {*object} newMsg 
+     * @param {*object} newMsg
      */
-    addMsg(newMsg) {
-
-        let currentMsgs = this.state.msgs;
-        let newMsgs = currentMsgs.concat(newMsg);
-
-        this.setState({msgs: newMsgs});
+    addMsg = newMsg => {
+        const { msgs } = this.state;
+        this.setState({ msgs: [...msgs, newMsg] });
     }
-    
+
     render() {
+        const { userId } = this.props;
+        const { msgs } = this.state;
+
         return (
             <div id="main">
                 <h1>Liste des messages</h1>
-                <Input addingMsg={this.addMsg.bind(this)} userId={this.userId} />
-                <Display msgs={this.state.msgs} userId={this.userId} />
+                <Input addingMsg={this.addMsg} userId={userId} />
+                <Display msgs={msgs} userId={userId} />
             </div>
         )
     }
-}
-
-App.propTypes = {
-    userId: PropTypes.number,
-    initialMsgs: PropTypes.array
 }
