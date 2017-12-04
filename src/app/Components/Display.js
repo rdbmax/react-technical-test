@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { msgsPropType } from '../../shape';
 import Message from './Message';
 
 const hasMessageKey = userKey => ({ messageKey }) => (userKey === messageKey);
@@ -17,8 +18,8 @@ const Display = ({ userId, msgs }) => (
 );
 
 Display.propTypes = {
-    userId: PropTypes.number,
-    msgs: PropTypes.array
+    userId: PropTypes.number.isRequired,
+    msgs: msgsPropType.isRequired,
 };
 
 export default Display;

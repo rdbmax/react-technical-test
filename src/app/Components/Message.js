@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types'
+import { msgPropType } from '../../shape';
 
 const PRIVATE_MSG = {
     text: 'message privé',
@@ -25,9 +26,7 @@ const Message = ({ msg: { message }, isPrivate }) => {
 };
 
 Message.propTypes = {
-    msg: PropTypes.shape({
-        message: PropTypes.string.isRequired,
-    }).isRequired,
+    msg: msgPropType.isRequired,
     isPrivate: PropTypes.bool.isRequired
 };
 

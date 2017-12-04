@@ -1,12 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { msgsPropType } from '../../shape';
 import Display from './Display';
 import Input from './Input'
 
 export default class App extends React.Component {
     static propTypes = {
-        userId: PropTypes.number,
-        initialMsgs: PropTypes.array
+        userId: PropTypes.number.isRequired,
+        initialMsgs: msgsPropType.isRequired,
     }
 
     constructor(props) {
